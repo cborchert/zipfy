@@ -28,7 +28,7 @@ const ZipfGraph = ({text}) => {
         )
         .sort((a, b) => {return b[1] - a[1]});
     const maxCount = sortedWords.length > 0 ? sortedWords[0][1] : 0;
-    const xIncrement = sortedWords.length > 0 ? Math.floor(1/sortedWords.length * 1000)/10 : 100;
+    const xIncrement = sortedWords.length > 0 ? 1/sortedWords.length * 100 : 100;
     const innerWidth = sortedWords.length * 12;
     let gridlineVals = [];
     if(maxCount >= 10){
