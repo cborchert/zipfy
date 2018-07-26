@@ -1,28 +1,31 @@
+:root {
+  --background: #2c3e50;
+  --gridfg: #ecf0f1;
+  --grid: #34495e;
+  --dot: #2980b9;
+  /* --dotExpected: #d35400; */
+  --dotExpected: #f39c12;
+}
+body {
+  background: var(--background);
+  color: var(--gridfg);
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+textarea {
+  background: var(--gridfg);
+  color: var(--background);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  outline: none;
+  border: none;
+  width: 500px;
+  max-width: 100%;
   padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  margin: 20px auto;
+  font-size: 14px;
+  min-height: 150px;
+  min-width: 150px;
+  line-height: 1.5;
+  border-radius: 4px;
 }
