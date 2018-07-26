@@ -3,16 +3,21 @@
   --gridfg: #ecf0f1;
   --grid: #34495e;
   --dot: #2980b9;
-  /* --dotExpected: #d35400; */
-  --dotExpected: #f39c12;
+  --dotExpected: #f1c40f;
 }
+
 body {
   background: var(--background);
   color: var(--gridfg);
 }
-.App {
+
+.App__textarea-container {
+  margin: 20px auto;
+  width: 500px;
+  max-width: 100%;
   text-align: center;
 }
+
 textarea {
   background: var(--gridfg);
   color: var(--background);
@@ -27,5 +32,43 @@ textarea {
   min-height: 150px;
   min-width: 150px;
   line-height: 1.5;
+  border-radius: 4px;
+  display: block;
+}
+
+.App__header {
+  margin: 10px auto 40px;
+  width: 300px;
+  max-width: 100%;
+}
+
+.App__credits, .App__note {
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+a {
+  color: var(--dotExpected);
+  text-decoration: none;
+}
+
+.App__title {
+  font-size: 48px;
+  letter-spacing: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  background: var(--dot);
+  color: var(--gridfg);
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   border-radius: 4px;
 }

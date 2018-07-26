@@ -1,7 +1,7 @@
 
 .ZipfGraph {
-    padding: 100px 0 20px;
-    height: 300px;
+    padding: 80px 0 20px;
+    height: 250px;
     width: 100%;
     overflow-x: scroll;
     position: relative;
@@ -30,7 +30,6 @@
     opacity: 0.2;
     background: var(--dotExpected);
 }
-
 
 .ZipfGraph__label {
     position: absolute;
