@@ -15,7 +15,6 @@ function stripHtml(html){
 const ZipfGraph = ({text}) => {
 
     const strippedText = stripHtml(text);
-    console.log(strippedText.length);
     const sortedWords = strippedText.replace(" ","").length < 1 
         ? [] 
         : toPairs(
@@ -28,7 +27,8 @@ const ZipfGraph = ({text}) => {
         )
         .sort((a, b) => {return b[1] - a[1]});
     const maxCount = sortedWords.length > 0 ? sortedWords[0][1] : 0;
-    const xIncrement = sortedWords.length > 0 ? 1/sortedWords.length * 100 : 100;
+    // const xIncrement = sortedWords.length > 0 ? 1/sortedWords.length * 100 : 100;
+    const xIncrement = 12;
     const innerWidth = sortedWords.length * 12;
     let gridlineVals = [];
     if(maxCount >= 10){
@@ -69,7 +69,7 @@ const ZipfGraph = ({text}) => {
                     sortedWords.map((pair, i)=>{
                         const y = Math.round(pair[1] / maxCount * 1000)/10;
                         return (
-                            <div className="ZipfGraph__bar" style={{bottom: `calc(${y}% - 5px)`, left: xIncrement*i + "%"}} key={i}>
+                            <div className="ZipfGraph__bar" style={{bottom: `calc(${y}% - 5px)`, left: xIncrement*i + "px"}} key={i}>
                                 <div className="ZipfGraph__label">
                                     {pair[0]}
                                 </div>
@@ -84,7 +84,7 @@ const ZipfGraph = ({text}) => {
                     sortedWords.map((pair, i)=>{
                         const y = Math.round((1/(i+1)) * 1000)/10;
                         return (
-                            <div className="ZipfGraph__bar ZipfGraph__bar--expected" style={{bottom: `calc(${y}% - 5px)`, left: xIncrement*i + "%"}} key={i} />
+                            <div className="ZipfGraph__bar ZipfGraph__bar--expected" style={{bottom: `calc(${y}% - 5px)`, left: xIncrement*i + "px"}} key={i} />
                          );
                     })
                 }      
